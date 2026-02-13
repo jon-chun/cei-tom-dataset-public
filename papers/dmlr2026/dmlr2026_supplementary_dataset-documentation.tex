@@ -1,0 +1,116 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue}
+
+\title{Supplementary Material: Dataset Documentation\\[0.5em]
+\large CEI: A Benchmark for Evaluating Pragmatic Reasoning in Language Models}
+
+\author{Chun et al.\\Kenyon College, Gambier, OH, USA}
+\date{February 2026}
+
+\begin{document}
+\maketitle
+
+\noindent This document provides the required DMLR dataset documentation for the CEI Benchmark as a standalone supplementary PDF, following the Datasheets for Datasets framework \cite{gebru2021datasheets}.
+
+\section{Motivation}
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Purpose:} Evaluate emotion inference from pragmatically complex (indirect) speech in language models. CEI tests whether models can move beyond surface semantics to infer what a speaker actually feels.
+    \item \textbf{Creators:} Academic research team at Kenyon College, led by Jon Chun.
+    \item \textbf{Funding:} None; completed as part of university coursework (IPHS 391, Fall 2025).
+    \item \textbf{Prior uses:} This is the first public release. Zero-shot baselines across 7 LLMs are reported in the accompanying paper.
+\end{itemize}
+
+\section{Composition}
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Instances:} 300 scenarios, each consisting of a situational context (2--4 sentences), labeled speaker and listener roles with power relation, and a pragmatically ambiguous utterance.
+    \item \textbf{Labels per scenario:} 3 independent annotations, each providing:
+    \begin{itemize}
+        \item Primary emotion from Plutchik's 8 basic emotions (joy, trust, fear, surprise, sadness, disgust, anger, anticipation)
+        \item Valence-Arousal-Dominance (VAD) ratings on 7-point scales mapped to $[-1.0, +1.0]$
+        \item Annotator confidence rating
+    \end{itemize}
+    \item \textbf{Gold labels:} Derived via majority vote; three-way splits adjudicated by expert meta-annotator.
+    \item \textbf{Pragmatic subtypes:} 5 (sarcasm/irony, mixed signals, strategic politeness, passive aggression, deflection/misdirection), 60 scenarios each.
+    \item \textbf{Power relations:} 3 (peer-to-peer: 217, high-to-low: 61, low-to-high: 22).
+    \item \textbf{Social settings:} Workplace, family, social/friendship, service encounters.
+    \item \textbf{Splits:} Predefined stratified train/val/test (70/15/15) balanced by subtype and power relation, generated with seed=42. Available in \texttt{reports/dmlr2026/splits.json}.
+    \item \textbf{Sensitive content:} None. All scenarios are synthetic (researcher-authored). No real conversations, personal data, or copyrighted materials are included.
+    \item \textbf{Personally identifiable information:} None.
+\end{itemize}
+
+\section{Collection Process}
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Scenario generation:} Template-based synthesis with expert curation. 600 initial scenarios were narrowed to 300 after manual review for quality, clarity, and subtype balance.
+    \item \textbf{Annotation:} 15 undergraduate annotators from an interdisciplinary course (IPHS 391) at Kenyon College, all fluent English speakers. Each annotator was assigned all 60 scenarios of a single subtype (3 annotators per subtype).
+    \item \textbf{Training:} Two 20-minute in-class explanations plus written guidelines (1-page cheatsheet and 3-page detailed guideline document).
+    \item \textbf{Annotation tool:} Label Studio (open-source).
+    \item \textbf{Timeline:} November--December 2025. Each annotator completed their 60 scenarios in a single session of approximately 50--70 minutes.
+    \item \textbf{Quality control:} 4-level pipeline: (1) schema validation, (2) statistical consistency checks (straight-lining, timing outliers, self-contradiction), (3) agreement analysis (Fleiss' $\kappa$ with bootstrap CIs), (4) expert adjudication of flagged items (15.7\% of dataset).
+    \item \textbf{Ethics:} IRB-exempt (Category 2). Annotators received course credit and provided informed consent for publication of their annotation labels.
+    \item \textbf{Consent:} All annotators were informed that their labels (but not free-text explanations) would be released publicly. Co-authorship terms were communicated before annotation began.
+\end{itemize}
+
+\section{Preprocessing}
+
+\begin{itemize}[leftmargin=*]
+    \item Annotations exported from Label Studio as JSON, then processed through the 4-level QA pipeline.
+    \item 2.6\% of annotations flagged at Level 2 (statistical consistency); none met exclusion thresholds.
+    \item 15.7\% of scenarios (47/300) required Level 4 expert adjudication.
+    \item Ground truth established via majority vote + expert override for three-way splits.
+    \item VAD ratings mapped from 7-point integer scales to $[-1.0, +1.0]$ continuous range.
+\end{itemize}
+
+\section{Uses}
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Intended uses:} Evaluating LLM pragmatic reasoning capabilities; benchmarking contextual emotion inference; studying inter-annotator agreement on subjective tasks; training emotion inference models (with appropriate caveats about dataset size).
+    \item \textbf{Not recommended:} High-stakes decision-making without human oversight; surveillance of employee sentiment; deployment as sole ground truth for emotion classification in clinical or legal settings.
+\end{itemize}
+
+\section{Author Responsibility Statement}
+
+The authors bear all responsibility in case of violation of rights, and confirm that:
+\begin{itemize}[leftmargin=*]
+    \item The dataset is released under the CC-BY-4.0 license.
+    \item All accompanying code is released under the MIT license.
+    \item All scenarios are synthetic and do not contain personal data, copyrighted materials, or content from real conversations.
+    \item The collection process was reviewed and deemed IRB-exempt (Category 2).
+\end{itemize}
+
+\section{Distribution and Hosting}
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{License:} CC-BY-4.0 (data), MIT (code)
+    \item \textbf{Primary access:} \url{https://github.com/jon-chun/cei-tom-dataset-base}
+    \item \textbf{Persistent archive:} Zenodo (DOI: \texttt{10.5281/zenodo.18528706})
+    \item \textbf{Machine-readable metadata:} Croissant format (auto-generated by HuggingFace Hub)
+    \item \textbf{File formats:} CSV (annotations), JSON (Label Studio exports, splits), YAML (configuration)
+\end{itemize}
+
+\section{Maintenance Plan}
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Versioning:} Semantic versioning (current: v1.0.0). All corrections logged in a changelog.
+    \item \textbf{Support commitment:} Minimum 5 years post-publication.
+    \item \textbf{Hosting:} GitHub (primary, actively maintained) + Zenodo (persistent archive with DOI).
+    \item \textbf{Contact:} \texttt{chunj@kenyon.edu}
+    \item \textbf{Issue tracking:} GitHub Issues on the repository.
+\end{itemize}
+
+\begin{thebibliography}{1}
+\bibitem{gebru2021datasheets}
+T.~Gebru, J.~Morgenstern, B.~Vecchione, J.~W. Vaughan, H.~Wallach, H.~{Daum\'{e} III}, and K.~Crawford.
+\newblock Datasheets for datasets.
+\newblock {\em Communications of the ACM}, 64(12):86--92, 2021.
+\end{thebibliography}
+
+\end{document}

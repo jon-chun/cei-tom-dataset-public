@@ -1,0 +1,487 @@
+\begin{thebibliography}{70}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Andreas and Klein(2016)]{andreas2016reasoning}
+Jacob Andreas and Dan Klein.
+\newblock Reasoning about pragmatics with neural listeners and speakers.
+\newblock In \emph{Proceedings of EMNLP}, pages 1173--1182, 2016.
+\newblock \doi{10.18653/v1/D16-1125}.
+
+\bibitem[Artstein and Poesio(2008)]{artstein2008inter}
+Ron Artstein and Massimo Poesio.
+\newblock Inter-coder agreement for computational linguistics.
+\newblock \emph{Computational Linguistics}, 34\penalty0 (4):\penalty0 555--596,
+  2008.
+\newblock \doi{10.1162/coli.07-034-R2}.
+
+\bibitem[Bender and Friedman(2018)]{bender2018data}
+Emily~M. Bender and Batya Friedman.
+\newblock Data statements for natural language processing: Toward mitigating
+  system bias and enabling better science.
+\newblock \emph{Transactions of the Association for Computational Linguistics},
+  6:\penalty0 587--604, 2018.
+\newblock \doi{10.1162/tacl_a_00041}.
+
+\bibitem[Bostan and Klinger(2018)]{bostan2018analysis}
+Laura-Ana-Maria Bostan and Roman Klinger.
+\newblock An analysis of annotated corpora for emotion classification in text.
+\newblock In \emph{Proceedings of COLING}, pages 2104--2119, 2018.
+
+\bibitem[Bradley and Lang(1999)]{bradley1999affective}
+Margaret~M. Bradley and Peter~J. Lang.
+\newblock Affective norms for {E}nglish words ({ANEW}): Instruction manual and
+  affective ratings.
+\newblock Technical report, Center for Research in Psychophysiology, University
+  of Florida, 1999.
+
+\bibitem[Bramsen et~al.(2011)Bramsen, Escobar-Molano, Patel, and
+  Alonso]{bramsen2011extracting}
+Philip Bramsen, Martha Escobar-Molano, Ami Patel, and Rafael Alonso.
+\newblock Extracting social power relationships from natural language.
+\newblock In \emph{Proceedings of ACL}, pages 773--782, 2011.
+
+\bibitem[Brown and Levinson(1987)]{brown1987politeness}
+Penelope Brown and Stephen~C. Levinson.
+\newblock \emph{Politeness: Some Universals in Language Usage}.
+\newblock Cambridge University Press, 1987.
+
+\bibitem[Buechel and Hahn(2016)]{buechel2016corpus}
+Sven Buechel and Udo Hahn.
+\newblock Emotion analysis as a regression problem -- dimensional models and
+  their implications on emotion representation and metrical evaluation.
+\newblock In \emph{Proceedings of ECAI}, pages 1114--1122, 2016.
+
+\bibitem[Buechel and Hahn(2017)]{buechel2017emobank}
+Sven Buechel and Udo Hahn.
+\newblock {EmoBank}: Studying the impact of annotation perspective and
+  representation format on dimensional emotion analysis.
+\newblock In \emph{Proceedings of EACL}, pages 578--585, 2017.
+\newblock \doi{10.18653/v1/E17-2092}.
+
+\bibitem[Buechel et~al.(2021)Buechel, Modersohn, and Hahn]{buechel2021label}
+Sven Buechel, Luise Modersohn, and Udo Hahn.
+\newblock Towards label-agnostic emotion embeddings.
+\newblock In \emph{Proceedings of EMNLP}, pages 9231--9249, 2021.
+\newblock \doi{10.18653/v1/2021.emnlp-main.728}.
+
+\bibitem[Busso et~al.(2008)]{busso2008iemocap}
+Carlos Busso et~al.
+\newblock {IEMOCAP}: Interactive emotional dyadic motion capture database.
+\newblock \emph{Language Resources and Evaluation}, 42\penalty0 (4):\penalty0
+  335--359, 2008.
+\newblock \doi{10.1007/s10579-008-9076-6}.
+
+\bibitem[Chun et~al.(2026)Chun, Sussman, Mangine, Kocaman, Sidorko, Koirala,
+  McCloud, Eisenbeis, Akanwe, Gassama, Gonzalez~Chirinos, Enright, Dunson, Ng,
+  von Rosenstiel, and Idowu]{chun2026cei}
+Jon Chun, Hannah Sussman, Adrian Mangine, Murathan Kocaman, Kirill Sidorko,
+  Abhigya Koirala, Andre McCloud, Gwen Eisenbeis, Wisdom Akanwe, Moustapha
+  Gassama, Eliezer Gonzalez~Chirinos, Anne-Duncan Enright, Peter Dunson,
+  Tiffanie Ng, Anna von Rosenstiel, and Godwin Idowu.
+\newblock {CEI} benchmark: Pragmatic reasoning dataset, 2026.
+\newblock URL \url{https://doi.org/10.5281/zenodo.18528706}.
+
+\bibitem[Danescu-Niculescu-Mizil et~al.(2013)Danescu-Niculescu-Mizil, Sudhof,
+  Jurafsky, Leskovec, and Potts]{danescu2013computational}
+Cristian Danescu-Niculescu-Mizil, Moritz Sudhof, Dan Jurafsky, Jure Leskovec,
+  and Christopher Potts.
+\newblock A computational approach to politeness with application to social
+  factors.
+\newblock In \emph{Proceedings of ACL}, pages 250--259, 2013.
+\newblock \doi{10.3115/v1/P13-1025}.
+
+\bibitem[Demszky et~al.(2020)Demszky, Movshovitz-Attias, Ko, Cowen, Nemade, and
+  Ravi]{demszky2020goemotions}
+Dorottya Demszky, Dana Movshovitz-Attias, Jeongwoo Ko, Alan Cowen, Gaurav
+  Nemade, and Sujith Ravi.
+\newblock {GoEmotions}: A dataset of fine-grained emotions.
+\newblock In \emph{Proceedings of ACL}, pages 4040--4054, 2020.
+\newblock \doi{10.18653/v1/2020.acl-main.372}.
+
+\bibitem[Fleiss(1971)]{fleiss1971measuring}
+Joseph~L. Fleiss.
+\newblock Measuring nominal scale agreement among many raters.
+\newblock \emph{Psychological Bulletin}, 76\penalty0 (5):\penalty0 378--382,
+  1971.
+\newblock \doi{10.1037/h0031619}.
+
+\bibitem[Gandhi et~al.(2023)Gandhi, Fr\"anken, Gerstenberg, and
+  Goodman]{gandhi2023bigtom}
+Kanishk Gandhi, Jan-Philipp Fr\"anken, Tobias Gerstenberg, and Noah~D. Goodman.
+\newblock Understanding social reasoning in language models with language
+  models.
+\newblock In \emph{Proceedings of NeurIPS}, 2023.
+
+\bibitem[Gebru et~al.(2021)Gebru, Morgenstern, Vecchione,
+  et~al.]{gebru2021datasheets}
+Timnit Gebru, Jamie Morgenstern, Briana Vecchione, et~al.
+\newblock Datasheets for datasets.
+\newblock \emph{Communications of the ACM}, 64\penalty0 (12):\penalty0 86--92,
+  2021.
+\newblock \doi{10.1145/3458723}.
+
+\bibitem[Ghosh et~al.(2020)Ghosh, Vajpayee, and Muresan]{ghosh2020semeval}
+Debanjan Ghosh, Avijit Vajpayee, and Smaranda Muresan.
+\newblock A report on the 2020 sarcasm detection shared task.
+\newblock In \emph{Proceedings of the Second Workshop on Figurative Language
+  Processing}, pages 1--11, 2020.
+\newblock \doi{10.18653/v1/2020.figlang-1.1}.
+
+\bibitem[Goodman and Frank(2016)]{goodman2016pragmatic}
+Noah~D. Goodman and Michael~C. Frank.
+\newblock Pragmatic language interpretation as probabilistic inference.
+\newblock \emph{Trends in Cognitive Sciences}, 20\penalty0 (11):\penalty0
+  818--829, 2016.
+\newblock \doi{10.1016/j.tics.2016.08.005}.
+
+\bibitem[Grice(1975)]{grice1975logic}
+H.~Paul Grice.
+\newblock Logic and conversation.
+\newblock \emph{Syntax and Semantics}, 3:\penalty0 41--58, 1975.
+
+\bibitem[Hu et~al.(2023)Hu, Floyd, Jouravlev, Fedorenko, and
+  Gibson]{hu2023fine}
+Jennifer Hu, Sammy Floyd, Olessia Jouravlev, Evelina Fedorenko, and Edward
+  Gibson.
+\newblock A fine-grained comparison of pragmatic language understanding in
+  humans and language models.
+\newblock In \emph{Proceedings of ACL}, pages 4194--4213, 2023.
+\newblock \doi{10.18653/v1/2023.acl-long.230}.
+
+\bibitem[Hyun and Kim(2023)]{hyun2023diplomat}
+Junhyung Hyun and Youngjoong Kim.
+\newblock {DiPlomat}: A dialogue dataset for situated pragmatic reasoning.
+\newblock In \emph{Advances in Neural Information Processing Systems: Datasets
+  and Benchmarks Track}, 2023.
+
+\bibitem[Jereti\v{c} et~al.(2020)Jereti\v{c}, Warstadt, Bhooshan, and
+  Williams]{jeretic2020natural}
+Paloma Jereti\v{c}, Alex Warstadt, Suvrat Bhooshan, and Adina Williams.
+\newblock Are natural language inference models {IMPPRESsive}? {L}earning
+  {IMPlicature} and {PRESupposition}.
+\newblock In \emph{Proceedings of ACL}, pages 8690--8705, 2020.
+\newblock \doi{10.18653/v1/2020.acl-main.768}.
+
+\bibitem[Joshi et~al.(2017)Joshi, Bhattacharyya, and
+  Carman]{joshi2017automatic}
+Aditya Joshi, Pushpak Bhattacharyya, and Mark~J. Carman.
+\newblock Automatic sarcasm detection: A survey.
+\newblock \emph{ACM Computing Surveys}, 50\penalty0 (5):\penalty0 1--22, 2017.
+\newblock \doi{10.1145/3124420}.
+
+\bibitem[Khodak et~al.(2018)Khodak, Saunshi, and Vodrahalli]{khodak2018large}
+Mikhail Khodak, Nikunj Saunshi, and Kiran Vodrahalli.
+\newblock A large self-annotated corpus for sarcasm.
+\newblock In \emph{Proceedings of LREC}, 2018.
+
+\bibitem[Kim et~al.(2023)]{kim2023fantom}
+Hyunwoo Kim et~al.
+\newblock {FANToM}: A benchmark for stress-testing machine theory of mind in
+  interactions.
+\newblock In \emph{Proceedings of EMNLP}, 2023.
+\newblock \doi{10.18653/v1/2023.emnlp-main.890}.
+
+\bibitem[Kosinski(2024)]{kosinski2024evaluating}
+Michal Kosinski.
+\newblock Evaluating large language models in theory of mind tasks.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 121\penalty0
+  (45):\penalty0 e2405460121, 2024.
+\newblock \doi{10.1073/pnas.2405460121}.
+
+\bibitem[Krippendorff(2018)]{krippendorff2018content}
+Klaus Krippendorff.
+\newblock \emph{Content Analysis: An Introduction to Its Methodology}.
+\newblock SAGE Publications, 4th edition, 2018.
+
+\bibitem[{Label Studio}(2020)]{labelstudio2020}
+{Label Studio}.
+\newblock Label studio: Data labeling software, 2020.
+\newblock URL \url{https://labelstud.io}.
+
+\bibitem[Le et~al.(2019)Le, Boureau, and Nickel]{le2019revisiting}
+Matthew Le, Y-Lan Boureau, and Maximilian Nickel.
+\newblock Revisiting the evaluation of theory of mind through question
+  answering.
+\newblock In \emph{Proceedings of EMNLP-IJCNLP}, pages 5872--5877, 2019.
+\newblock \doi{10.18653/v1/D19-1598}.
+
+\bibitem[Levesque et~al.(2012)Levesque, Davis, and
+  Morgenstern]{levesque2012winograd}
+Hector~J. Levesque, Ernest Davis, and Leora Morgenstern.
+\newblock The {W}inograd schema challenge.
+\newblock In \emph{Proceedings of KR}, 2012.
+
+\bibitem[Levinson(1983)]{levinson1983pragmatics}
+Stephen~C. Levinson.
+\newblock \emph{Pragmatics}.
+\newblock Cambridge University Press, 1983.
+
+\bibitem[Lian et~al.(2024)Lian, Sun, Sun, Wen, Zhang, Chen, Gu, Zhao, Ma, Chen,
+  Yi, Liu, Xu, Liu, Cambria, Zhao, Schuller, and Tao]{lian2024mer}
+Zheng Lian, Haiyang Sun, Licai Sun, Zhuofan Wen, Siyuan Zhang, Shun Chen, Hao
+  Gu, Jinming Zhao, Ziyang Ma, Xie Chen, Jiangyan Yi, Rui Liu, Kele Xu, Bin
+  Liu, Erik Cambria, Guoying Zhao, Bj\"orn~W. Schuller, and Jianhua Tao.
+\newblock {MER 2024}: Semi-supervised learning, noise robustness, and
+  open-vocabulary multimodal emotion recognition.
+\newblock In \emph{Proceedings of the 2nd International Workshop on Multimodal
+  and Responsible Affective Computing (MRAC '24)}, 2024.
+\newblock \doi{10.1145/3689092.3689959}.
+
+\bibitem[Lian et~al.(2025)Lian, Sun, Sun, Chen, Chen, Gu, Wen, Chen, Zhang,
+  Yao, Liu, Liu, Liang, Li, Yi, and Tao]{lian2025ovmer}
+Zheng Lian, Haiyang Sun, Licai Sun, Haoyu Chen, Lan Chen, Hao Gu, Zhuofan Wen,
+  Shun Chen, Siyuan Zhang, Hailiang Yao, Bin Liu, Rui Liu, Shan Liang, Ya~Li,
+  Jiangyan Yi, and Jianhua Tao.
+\newblock {OV-MER}: Towards open-vocabulary multimodal emotion recognition.
+\newblock In \emph{Proceedings of ICML}, 2025.
+
+\bibitem[Liang et~al.(2023)]{liang2022holistic}
+Percy Liang et~al.
+\newblock Holistic evaluation of language models.
+\newblock \emph{Transactions on Machine Learning Research}, 2023.
+
+\bibitem[Lim and Cheong(2024)]{lim2024plutchik}
+Dongjun Lim and Yun-Gyung Cheong.
+\newblock Integrating {Plutchik}'s theory with mixture of experts for enhancing
+  emotion classification.
+\newblock In \emph{Proceedings of EMNLP}, 2024.
+\newblock \doi{10.18653/v1/2024.emnlp-main.50}.
+
+\bibitem[Liu et~al.(2024)Liu, Zhao, Li, and Zhang]{liu2024emobench}
+Yuxuan Liu, Yang Zhao, Ximing Li, and Qin Zhang.
+\newblock {EmoBench}: Evaluating the emotional intelligence of large language
+  models.
+\newblock In \emph{Proceedings of the 62nd Annual Meeting of the Association
+  for Computational Linguistics}, 2024.
+
+\bibitem[Mehrabian(1996)]{mehrabian1996pleasure}
+Albert Mehrabian.
+\newblock Pleasure-arousal-dominance: A general framework for describing and
+  measuring individual differences in temperament.
+\newblock \emph{Current Psychology}, 14\penalty0 (4):\penalty0 261--292, 1996.
+\newblock \doi{10.1007/BF02686918}.
+
+\bibitem[Mohammad et~al.(2018)Mohammad, Bravo-Marquez, Salameh, and
+  Kiritchenko]{mohammad2018semeval}
+Saif Mohammad, Felipe Bravo-Marquez, Mohammad Salameh, and Svetlana
+  Kiritchenko.
+\newblock {SemEval}-2018 task 1: Affect in tweets.
+\newblock In \emph{Proceedings of SemEval}, pages 1--17, 2018.
+\newblock \doi{10.18653/v1/S18-1001}.
+
+\bibitem[Mohammad(2018)]{mohammad2018obtaining}
+Saif~M. Mohammad.
+\newblock Obtaining reliable human ratings of valence, arousal, and dominance
+  for 20,000 {E}nglish words.
+\newblock In \emph{Proceedings of ACL}, pages 174--184, 2018.
+\newblock \doi{10.18653/v1/P18-1017}.
+
+\bibitem[Mohammad and Turney(2013)]{mohammad2012semeval}
+Saif~M. Mohammad and Peter~D. Turney.
+\newblock Crowdsourcing a word-emotion association lexicon.
+\newblock \emph{Computational Intelligence}, 29\penalty0 (3):\penalty0
+  436--465, 2013.
+\newblock \doi{10.1111/j.1467-8640.2012.00460.x}.
+
+\bibitem[Niu et~al.(2024)Niu, El-Tawil, Romana, and
+  Mower~Provost]{niu2024rethinking}
+Minxue Niu, Yara El-Tawil, Amrit Romana, and Emily Mower~Provost.
+\newblock Rethinking emotion annotations in the era of large language models.
+\newblock \emph{IEEE Transactions on Affective Computing}, 2024.
+\newblock \doi{10.1109/TAFFC.2024.3519178}.
+
+\bibitem[Oprea and Magdy(2020)]{oprea2020isarcasm}
+Silviu Oprea and Walid Magdy.
+\newblock {iSarcasm}: A dataset of intended sarcasm.
+\newblock In \emph{Proceedings of ACL}, pages 1279--1289, 2020.
+\newblock \doi{10.18653/v1/2020.acl-main.118}.
+
+\bibitem[Passonneau and Carpenter(2014)]{passonneau2014benefits}
+Rebecca~J. Passonneau and Bob Carpenter.
+\newblock The benefits of a model of annotation.
+\newblock \emph{Transactions of the Association for Computational Linguistics},
+  2:\penalty0 311--326, 2014.
+\newblock \doi{10.1162/tacl_a_00185}.
+
+\bibitem[Pavlick and Kwiatkowski(2019)]{pavlick2019inherent}
+Ellie Pavlick and Tom Kwiatkowski.
+\newblock Inherent disagreements in human textual inferences.
+\newblock \emph{Transactions of the Association for Computational Linguistics},
+  7:\penalty0 677--694, 2019.
+\newblock \doi{10.1162/tacl_a_00293}.
+
+\bibitem[Pineau et~al.(2021)Pineau, Vincent-Lamarre, Sinha, Larivi\`{e}re,
+  Beygelzimer, d'Alch\'{e} Buc, Fox, and Larochelle]{pineau2021improving}
+Joelle Pineau, Philippe Vincent-Lamarre, Koustuv Sinha, Vincent Larivi\`{e}re,
+  Alina Beygelzimer, Florence d'Alch\'{e} Buc, Emily Fox, and Hugo Larochelle.
+\newblock Improving reproducibility in machine learning research: A report from
+  the {NeurIPS} 2019 reproducibility program.
+\newblock \emph{Journal of Machine Learning Research}, 22\penalty0
+  (164):\penalty0 1--20, 2021.
+
+\bibitem[Pinker et~al.(2008)Pinker, Nowak, and Lee]{pinker2008logic}
+Steven Pinker, Martin~A. Nowak, and James~J. Lee.
+\newblock The logic of indirect speech.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 105\penalty0
+  (3):\penalty0 833--838, 2008.
+\newblock \doi{10.1073/pnas.0707192105}.
+
+\bibitem[Plank et~al.(2014)Plank, Hovy, and
+  S\o{}gaard]{plank2014linguistically}
+Barbara Plank, Dirk Hovy, and Anders S\o{}gaard.
+\newblock Linguistically debatable or just plain wrong?
+\newblock In \emph{Proceedings of ACL}, pages 507--511, 2014.
+\newblock \doi{10.3115/v1/P14-2083}.
+
+\bibitem[Plutchik(1980)]{plutchik1980general}
+Robert Plutchik.
+\newblock A general psychoevolutionary theory of emotion.
+\newblock \emph{Emotion: Theory, Research, and Experience}, 1:\penalty0 3--33,
+  1980.
+
+\bibitem[Plutchik(2001)]{plutchik2001nature}
+Robert Plutchik.
+\newblock The nature of emotions.
+\newblock \emph{American Scientist}, 89\penalty0 (4):\penalty0 344--350, 2001.
+
+\bibitem[Poria et~al.(2019)Poria, Hazarika, Majumder, et~al.]{poria2019meld}
+Soujanya Poria, Devamanyu Hazarika, Navonil Majumder, et~al.
+\newblock {MELD}: A multimodal multi-party dataset for emotion recognition in
+  conversations.
+\newblock In \emph{Proceedings of ACL}, pages 527--536, 2019.
+\newblock \doi{10.18653/v1/P19-1050}.
+
+\bibitem[Prabhakaran et~al.(2012)Prabhakaran, Rambow, and
+  Diab]{prabhakaran2012power}
+Vinodkumar Prabhakaran, Owen Rambow, and Mona Diab.
+\newblock Predicting overt display of power in written dialogs.
+\newblock In \emph{Proceedings of NAACL-HLT}, pages 518--522, 2012.
+
+\bibitem[Rashkin et~al.(2018)Rashkin, Sap, Allaway, Smith, and
+  Choi]{rashkin2018event2mind}
+Hannah Rashkin, Maarten Sap, Emily Allaway, Noah~A. Smith, and Yejin Choi.
+\newblock Event2mind: Commonsense inference on events, intents, and reactions.
+\newblock In \emph{Proceedings of ACL}, pages 463--473, 2018.
+\newblock \doi{10.18653/v1/P18-1043}.
+
+\bibitem[Roemmele et~al.(2011)Roemmele, Bejan, and Gordon]{roemmele2011choice}
+Melissa Roemmele, Cosmin~Adrian Bejan, and Andrew~S. Gordon.
+\newblock Choice of plausible alternatives: An evaluation of commonsense causal
+  reasoning.
+\newblock In \emph{AAAI Spring Symposium: Logical Formalizations of Commonsense
+  Reasoning}, 2011.
+
+\bibitem[Ruis et~al.(2023)Ruis, Khan, Biderman, Hooker, Rockt\"aschel, and
+  Grefenstette]{ruis2023goldilocks}
+Laura Ruis, Akbir Khan, Stella Biderman, Sara Hooker, Tim Rockt\"aschel, and
+  Edward Grefenstette.
+\newblock The goldilocks of pragmatic understanding: Fine-tuning strategy
+  matters for implicature resolution by {LLMs}.
+\newblock In \emph{Proceedings of NeurIPS}, 2023.
+
+\bibitem[Russell(1980)]{russell1980circumplex}
+James~A. Russell.
+\newblock A circumplex model of affect.
+\newblock \emph{Journal of Personality and Social Psychology}, 39\penalty0
+  (6):\penalty0 1161--1178, 1980.
+\newblock \doi{10.1037/h0077714}.
+
+\bibitem[Sap et~al.(2019)Sap, Rashkin, Chen, Le~Bras, and
+  Choi]{sap2019socialiqa}
+Maarten Sap, Hannah Rashkin, Derek Chen, Ronan Le~Bras, and Yejin Choi.
+\newblock {Social IQa}: Commonsense reasoning about social interactions.
+\newblock In \emph{Proceedings of EMNLP-IJCNLP}, pages 4463--4473, 2019.
+\newblock \doi{10.18653/v1/D19-1454}.
+
+\bibitem[Sap et~al.(2022)Sap, Le~Bras, Fried, and Choi]{sap2022neural}
+Maarten Sap, Ronan Le~Bras, Daniel Fried, and Yejin Choi.
+\newblock Neural theory-of-mind? {O}n the limits of social intelligence in
+  large {LM}s.
+\newblock In \emph{Proceedings of EMNLP}, pages 3762--3780, 2022.
+\newblock \doi{10.18653/v1/2022.emnlp-main.248}.
+
+\bibitem[Searle(1975)]{searle1975indirect}
+John~R. Searle.
+\newblock Indirect speech acts.
+\newblock In \emph{Syntax and Semantics}, volume~3, pages 59--82. Academic
+  Press, 1975.
+
+\bibitem[Shapira et~al.(2024)]{shapira2024clever}
+Natalie Shapira et~al.
+\newblock Clever {Hans} or neural theory of mind? {S}tress testing social
+  reasoning in large language models.
+\newblock In \emph{Proceedings of EACL}, 2024.
+
+\bibitem[Shrout and Fleiss(1979)]{shrout1979intraclass}
+Patrick~E. Shrout and Joseph~L. Fleiss.
+\newblock Intraclass correlations: Uses in assessing rater reliability.
+\newblock \emph{Psychological Bulletin}, 86\penalty0 (2):\penalty0 420--428,
+  1979.
+\newblock \doi{10.1037/0033-2909.86.2.420}.
+
+\bibitem[Sperber and Wilson(1986)]{sperber1986relevance}
+Dan Sperber and Deirdre Wilson.
+\newblock \emph{Relevance: Communication and Cognition}.
+\newblock Harvard University Press, Cambridge, MA, 1986.
+
+\bibitem[Srivastava et~al.(2023)Srivastava, Rastogi, Rao, Shoeb, Abid, Fisch,
+  et~al.]{srivastava2022beyond}
+Aarohi Srivastava, Abhinav Rastogi, Abhishek Rao, Abu Awal~Md Shoeb, Abubakar
+  Abid, Adam Fisch, et~al.
+\newblock Beyond the imitation game: Quantifying and extrapolating the
+  capabilities of language models.
+\newblock \emph{Transactions on Machine Learning Research}, 2023.
+
+\bibitem[Strapparava and Mihalcea(2007)]{strapparava2007semeval}
+Carlo Strapparava and Rada Mihalcea.
+\newblock {SemEval}-2007 task 14: Affective text.
+\newblock In \emph{Proceedings of SemEval}, pages 70--74, 2007.
+
+\bibitem[Ullman(2023)]{ullman2023large}
+Tomer Ullman.
+\newblock Large language models fail on trivial alterations to theory-of-mind
+  tasks.
+\newblock \emph{arXiv preprint arXiv:2302.08399}, 2023.
+
+\bibitem[Uma et~al.(2021)Uma, Fornaciari, Hovy, Paun, Plank, and
+  Poesio]{uma2021learning}
+Alexandra Uma, Tommaso Fornaciari, Dirk Hovy, Silviu Paun, Barbara Plank, and
+  Massimo Poesio.
+\newblock Learning from disagreement: A survey.
+\newblock \emph{Journal of Artificial Intelligence Research}, 72:\penalty0
+  1385--1470, 2021.
+\newblock \doi{10.1613/jair.1.12752}.
+
+\bibitem[Warriner et~al.(2013)Warriner, Kuperman, and
+  Brysbaert]{warriner2013norms}
+Amy~Beth Warriner, Victor Kuperman, and Marc Brysbaert.
+\newblock Norms of valence, arousal, and dominance for 13,915 {E}nglish lemmas.
+\newblock \emph{Behavior Research Methods}, 45\penalty0 (4):\penalty0
+  1191--1207, 2013.
+\newblock \doi{10.3758/s13428-012-0314-x}.
+
+\bibitem[Wu et~al.(2023)Wu, He, Jia, Mihalcea, Chen, and Deng]{wu2023hitom}
+Yufan Wu, Yinghui He, Yilin Jia, Rada Mihalcea, Yulong Chen, and Naihao Deng.
+\newblock {Hi-ToM}: A benchmark for evaluating higher-order theory of mind
+  reasoning in large language models.
+\newblock In \emph{Findings of EMNLP}, pages 10691--10706, 2023.
+\newblock \doi{10.18653/v1/2023.findings-emnlp.717}.
+
+\bibitem[Xu et~al.(2024)]{xu2024opentom}
+Hainiu Xu et~al.
+\newblock {OpenToM}: A comprehensive benchmark for evaluating theory-of-mind
+  reasoning capabilities of large language models.
+\newblock In \emph{Proceedings of ACL}, 2024.
+
+\bibitem[Zadeh et~al.(2018)]{zadeh2018multimodal}
+Amir Zadeh et~al.
+\newblock Multimodal language analysis in the wild: {CMU-MOSEI} dataset and
+  interpretable dynamic fusion graph.
+\newblock In \emph{Proceedings of ACL}, pages 2236--2246, 2018.
+\newblock \doi{10.18653/v1/P18-1208}.
+
+\end{thebibliography}

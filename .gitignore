@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.pdf
+!papers/dmlr2026/figures/*.pdf
+
+# OS
+.DS_Store
+
+# Logs
+logs/
+
+# Editor
+*.swp
+*.swo
+*~

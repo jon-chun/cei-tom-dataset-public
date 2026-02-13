@@ -1,0 +1,176 @@
+{
+  "zero-shot": {
+    "gpt-5-mini": {
+      "accuracy": 0.18666666666666668,
+      "macro_f1": 0.19202149205617622,
+      "n_total": 300,
+      "n_correct": 56,
+      "n_parsed": 217,
+      "parse_fail": 83
+    },
+    "claude-sonnet-4-5": {
+      "accuracy": 0.19333333333333333,
+      "macro_f1": 0.177001028659004,
+      "n_total": 300,
+      "n_correct": 58,
+      "n_parsed": 299,
+      "parse_fail": 1
+    },
+    "grok-4-1-fast-non-reasoning": {
+      "accuracy": 0.21333333333333335,
+      "macro_f1": 0.19446676528194978,
+      "n_total": 300,
+      "n_correct": 64,
+      "n_parsed": 298,
+      "parse_fail": 2
+    },
+    "gemini-2.5-flash": {
+      "accuracy": 0.13,
+      "macro_f1": 0.12100914672116189,
+      "n_total": 300,
+      "n_correct": 39,
+      "n_parsed": 188,
+      "parse_fail": 112
+    },
+    "llama-3.1-70b": {
+      "accuracy": 0.25,
+      "macro_f1": 0.22511098498904467,
+      "n_total": 300,
+      "n_correct": 75,
+      "n_parsed": 300,
+      "parse_fail": 0
+    },
+    "deepseek-v3p1": {
+      "accuracy": 0.22,
+      "macro_f1": 0.17947321689913898,
+      "n_total": 300,
+      "n_correct": 66,
+      "n_parsed": 297,
+      "parse_fail": 3
+    },
+    "qwen2.5-7b": {
+      "accuracy": 0.20666666666666667,
+      "macro_f1": 0.1521882676529532,
+      "n_total": 300,
+      "n_correct": 62,
+      "n_parsed": 260,
+      "parse_fail": 40
+    }
+  },
+  "cot": {
+    "gpt-5-mini": {
+      "accuracy": 0.24333333333333335,
+      "macro_f1": 0.1971371336996337,
+      "n_total": 300,
+      "n_correct": 73,
+      "n_parsed": 300,
+      "parse_fail": 0
+    },
+    "claude-sonnet-4-5": {
+      "accuracy": 0.15,
+      "macro_f1": 0.11284136986208174,
+      "n_total": 300,
+      "n_correct": 45,
+      "n_parsed": 300,
+      "parse_fail": 0
+    },
+    "grok-4-1-fast-non-reasoning": {
+      "accuracy": 0.21,
+      "macro_f1": 0.15051237485052055,
+      "n_total": 300,
+      "n_correct": 63,
+      "n_parsed": 300,
+      "parse_fail": 0
+    },
+    "gemini-2.5-flash": {
+      "accuracy": 0.14666666666666667,
+      "macro_f1": 0.1131350094768862,
+      "n_total": 300,
+      "n_correct": 44,
+      "n_parsed": 258,
+      "parse_fail": 42
+    },
+    "llama-3.1-70b": {
+      "accuracy": 0.22,
+      "macro_f1": 0.15797561920329084,
+      "n_total": 300,
+      "n_correct": 66,
+      "n_parsed": 300,
+      "parse_fail": 0
+    },
+    "deepseek-v3p1": {
+      "accuracy": 0.19333333333333333,
+      "macro_f1": 0.16270528829799885,
+      "n_total": 300,
+      "n_correct": 58,
+      "n_parsed": 300,
+      "parse_fail": 0
+    },
+    "qwen2.5-7b": {
+      "accuracy": 0.25,
+      "macro_f1": 0.19748226188894363,
+      "n_total": 300,
+      "n_correct": 75,
+      "n_parsed": 285,
+      "parse_fail": 15
+    }
+  },
+  "few-shot": {
+    "gpt-5-mini": {
+      "accuracy": 0.14,
+      "macro_f1": 0.11892654836203223,
+      "n_total": 300,
+      "n_correct": 42,
+      "n_parsed": 187,
+      "parse_fail": 113
+    },
+    "claude-sonnet-4-5": {
+      "accuracy": 0.18,
+      "macro_f1": 0.128276132693293,
+      "n_total": 300,
+      "n_correct": 54,
+      "n_parsed": 299,
+      "parse_fail": 1
+    },
+    "grok-4-1-fast-non-reasoning": {
+      "accuracy": 0.20333333333333334,
+      "macro_f1": 0.1405201758261242,
+      "n_total": 300,
+      "n_correct": 61,
+      "n_parsed": 296,
+      "parse_fail": 4
+    },
+    "gemini-2.5-flash": {
+      "accuracy": 0.18333333333333332,
+      "macro_f1": 0.14864977114977115,
+      "n_total": 300,
+      "n_correct": 55,
+      "n_parsed": 292,
+      "parse_fail": 8
+    },
+    "llama-3.1-70b": {
+      "accuracy": 0.21333333333333335,
+      "macro_f1": 0.16227438560554167,
+      "n_total": 300,
+      "n_correct": 64,
+      "n_parsed": 294,
+      "parse_fail": 6
+    },
+    "deepseek-v3p1": {
+      "accuracy": 0.19666666666666666,
+      "macro_f1": 0.13046895971250855,
+      "n_total": 300,
+      "n_correct": 59,
+      "n_parsed": 296,
+      "parse_fail": 4
+    },
+    "qwen2.5-7b": {
+      "accuracy": 0.20333333333333334,
+      "macro_f1": 0.18512352414868494,
+      "n_total": 300,
+      "n_correct": 61,
+      "n_parsed": 228,
+      "parse_fail": 72
+    }
+  }
+}

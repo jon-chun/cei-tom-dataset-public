@@ -1,0 +1,9 @@
+# CEI Benchmark DMLR 2026 — Replication Dependencies
+# Install: pip install -r requirements.txt
+
+# Required for pipeline
+pyyaml>=6.0
+
+# Optional: for figure generation (generate_model_confusion_matrix.py)
+matplotlib>=3.7
+numpy>=1.24

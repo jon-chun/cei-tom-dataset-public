@@ -1,0 +1,125 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{array}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue}
+
+\newcommand{\yes}{\textcolor{green!60!black}{\textbf{Yes}}}
+\newcommand{\no}{\textcolor{red!70!black}{\textbf{No}}}
+\newcommand{\na}{\textcolor{gray}{\textbf{N/A}}}
+\newcommand{\just}[1]{\textit{#1}}
+
+\title{Supplementary Material: NeurIPS Paper Checklist\\[0.5em]
+\large CEI: A Benchmark for Evaluating Pragmatic Reasoning in Language Models}
+
+\author{Chun et al.\\Kenyon College, Gambier, OH, USA}
+\date{February 2026}
+
+\begin{document}
+\maketitle
+
+\noindent This checklist follows the NeurIPS Paper Checklist Guidelines, which DMLR adopts as a guidance tool for submissions.
+
+\section{Claims}
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Do the main claims made in the abstract and introduction accurately reflect the paper's contributions and scope?} \\
+    \yes. The abstract claims (300 scenarios, 5 subtypes, 3 power relations, 3 annotators, Fleiss' $\kappa$ range, 4-level QA pipeline, CC-BY-4.0 release) are all substantiated in the paper body.
+
+    \item \textbf{Does the abstract summarize the paper's main contributions?} \\
+    \yes. Three contributions are listed in the introduction (\S1) and supported throughout.
+\end{enumerate}
+
+\section{Limitations}
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Does the paper discuss the limitations of the work?} \\
+    \yes. Section 6.2 discusses: synthetic (non-naturalistic) scenarios, English-only scope, annotation framing ambiguity, low $\kappa$ interpretation, deflection subtype difficulty, scale constraints, and power relation skew.
+
+    \item \textbf{Does the paper discuss potential negative societal impacts?} \\
+    \yes. The Broader Impact Statement (\S6.3 and the \texttt{\textbackslash impact\{\}} section) discusses surveillance, political manipulation, and deceptive AI risks. Mitigation strategies are described.
+\end{enumerate}
+
+\section{Theory}
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{If applicable, do all theoretical results have formal proofs?} \\
+    \na. This is a dataset paper with no theoretical claims.
+\end{enumerate}
+
+\section{Experiments}
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Does the paper include all information needed to reproduce the experiments?} \\
+    \yes. Prompt templates (Appendix C), model names and versions (Table 5), temperature settings (temperature 0), and configuration files (\texttt{config/config-dmlr.yml}) are provided.
+
+    \item \textbf{Does the paper report error bars or confidence intervals?} \\
+    \yes. Bootstrap 95\% CIs (2,000 resamples, seed=42) for all Fleiss' $\kappa$ values (Table 3). ICC values for VAD dimensions (Table 4). 95\% CIs on emotion-valence consistency (Figure 9).
+
+    \item \textbf{Does the paper report statistical significance tests?} \\
+    \yes. Spearman rank correlations for linguistic features (\S4.4). Chi-squared power analysis for detectable effect size (\S6.2).
+
+    \item \textbf{If applicable, does the paper use datasets that are publicly available?} \\
+    \yes. CEI is released under CC-BY-4.0 at \url{https://github.com/jon-chun/cei-tom-dataset-base} and archived on Zenodo (DOI: \texttt{10.5281/zenodo.18528706}).
+\end{enumerate}
+
+\section{Code and Data}
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Does the paper include code for reproducing the experiments?} \\
+    \yes. Full pipeline code released under MIT license. Reproducible via: \texttt{python scripts/run\_pipeline\_dmlr2026.py --stage all\_local}.
+
+    \item \textbf{Does the paper include the dataset or a link to the dataset?} \\
+    \yes. GitHub URL in abstract footnote and Appendix A. Zenodo DOI for persistent access.
+
+    \item \textbf{Does the paper include dataset documentation?} \\
+    \yes. Datasheet (Appendix A) following Gebru et al. (2021). Annotation guidelines (Appendix B). Standalone dataset documentation PDF provided as supplementary material.
+
+    \item \textbf{Does the paper specify the license for code and data?} \\
+    \yes. CC-BY-4.0 (data), MIT (code). Stated in abstract, \S1, \S6, and Appendix A.
+\end{enumerate}
+
+\section{Human Subjects}
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Does the paper describe the annotation process and annotator qualifications?} \\
+    \yes. \S3.1 describes annotator recruitment (15 undergraduates), training protocol, assignment structure, and annotation timeline.
+
+    \item \textbf{Does the paper report inter-annotator agreement?} \\
+    \yes. Fleiss' $\kappa$ per subtype with 95\% bootstrap CIs (Table 3). ICC for VAD dimensions (Table 4). Confusion matrix (Figure 3).
+
+    \item \textbf{Were annotators compensated fairly?} \\
+    \yes. Annotators received course credit (graded assignment). Co-authorship offered for high-quality contributions. IRB-exempt (Category 2). See Appendix G.
+
+    \item \textbf{Did annotators provide informed consent?} \\
+    \yes. Annotators were informed that labels would be released publicly and consented to publication. See Appendix G.
+
+    \item \textbf{Does the paper protect annotator privacy?} \\
+    \yes. Free-text explanations are not released. Individual annotations are identified by annotator number, not name. Co-authors who are annotators consented to being identified.
+\end{enumerate}
+
+\section{Broader Impact}
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Does the paper include a Broader Impact Statement?} \\
+    \yes. Uses the DMLR \texttt{\textbackslash impact\{\}} command. Discusses positive applications (mental health, accessibility, conflict mediation) and negative risks (surveillance, manipulation, deceptive AI). Mitigation strategies described.
+\end{enumerate}
+
+\section{Reproducibility}
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Are all datasets, code, and instructions available?} \\
+    \yes. See Appendix D (Reproducibility Checklist) with 15 items, all checked. Verification command provided.
+
+    \item \textbf{Are random seeds specified?} \\
+    \yes. All stochastic operations use seed=42 by default.
+
+    \item \textbf{Are compute resources documented?} \\
+    \yes. Appendix H specifies: commercial API endpoints only, 6,300 API calls (3 prompt modes), approximately \$15 total cost, 2.5 hours wall-clock time, no GPU required for local analysis.
+\end{enumerate}
+
+\end{document}

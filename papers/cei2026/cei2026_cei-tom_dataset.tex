@@ -69,7 +69,7 @@ When a junior employee tells their manager ``Sure, I'll handle the extra work th
 
 Language models are now deployed for communication analysis in HR screening, sentiment analysis, and content moderation, where pragmatic interpretation is required \citep{liang2022holistic}. These applications demand that a model integrate contextual cues, social roles, and power dynamics rather than parse surface meaning alone. Existing benchmarks address narrow pragmatic phenomena such as sarcasm detection \citep{ghosh2020semeval} or test adjacent capabilities \citep{sap2019socialiqa,le2019revisiting}, but to the best of our knowledge, none targets single-turn pragmatic reasoning across multiple social contexts and communication styles simultaneously.
 
-We introduce the \textbf{Contextual Emotional Inference (CEI) Benchmark}, a dataset of 300 scenarios spanning 5 pragmatic subtypes and 3 power relations, each labeled independently by 3 trained annotators (900 annotations total). Inter-annotator agreement is low (Fleiss' $\kappa = 0.06$--$0.25$ by subtype), which we argue reflects the difficulty of the task rather than noisy annotation. To catch actual quality problems, we developed a 4-level QA pipeline combining automated statistical checks, agreement analysis, and expert adjudication. We release the dataset, annotation guidelines, and all code under permissive licenses (CC-BY-4.0 for data, MIT for code).\footnote{Code: \url{https://github.com/jon-chun/cei-tom-dataset-base}; Dataset: \url{https://huggingface.co/datasets/jonc/cei-benchmark}}
+We introduce the \textbf{Contextual Emotional Inference (CEI) Benchmark}, a dataset of 300 scenarios spanning 5 pragmatic subtypes and 3 power relations, each labeled independently by 3 trained annotators (900 annotations total). Inter-annotator agreement is low (Fleiss' $\kappa = 0.06$--$0.25$ by subtype), which we argue reflects the difficulty of the task rather than noisy annotation. To catch actual quality problems, we developed a 4-level QA pipeline combining automated statistical checks, agreement analysis, and expert adjudication. We release the dataset, annotation guidelines, and all code under permissive licenses (CC-BY-4.0 for data, MIT for code).\footnote{Code: \url{https://github.com/jon-chun/cei-tom-dataset-public}; Dataset: \url{https://huggingface.co/datasets/jonc/cei-benchmark}}
 
 Our contributions are:
 \begin{enumerate}[leftmargin=*,noitemsep]
@@ -572,7 +572,7 @@ Taken together, these results establish that CEI is a genuinely difficult benchm
 
 Three observations confirm that CEI has diagnostic utility beyond simply showing that models perform poorly. First, the benchmark \textit{discriminates between models}: accuracy ranges from 13.0\% (Gemini 2.5 Flash) to 25.0\% (Llama-3.1-70B), a 12-percentage-point spread, and models differ most sharply on specific subtypes (e.g., Llama-3.1-70B reaches 33.3\% on mixed signals while Gemini 2.5 Flash scores 13.3\%, but Claude leads on passive aggression). Second, the dissociation between human and model difficulty across subtypes (Spearman $\rho = -0.50$ between human $\kappa$ and mean model accuracy) implies that model errors reflect qualitatively different processing failures rather than simply mirroring human uncertainty. Third, the benchmark occupies a ``diagnostic sweet spot'': the gap between random performance (12.5\%) and the best model (25.0\%) is 12.5 percentage points, while the gap between models and human majority agreement (54\%) is 29 percentage points---leaving substantial room for improvement while confirming that models capture some pragmatic signal.
 
-The systematic nature of human disagreement and the internal consistency of VAD ratings further indicate that CEI measures something real about pragmatic competence rather than simply adding noise. Figure~\ref{fig:model-confusion} shows the model-level confusion matrix, aggregated across all 7 models in the zero-shot condition. Comparing this with the human confusion matrix (Figure~\ref{fig:confusion}) reveals overlapping but distinct error patterns. Models, like humans, frequently confuse anger and surprise. But models also over-predict anger and sadness at the expense of rarer emotions (disgust, anticipation), concentrating errors more narrowly than humans do. When uncertain, models appear to default to high-frequency negative emotions; human annotators spread their disagreements more evenly across the emotion wheel. The released per-scenario predictions and analysis scripts support further investigation.\footnote{Run \texttt{python scripts/run\_pipeline\_dmlr2026.py --stage all} to regenerate all baseline predictions and confusion matrices.} We additionally note that VAD prediction could serve as a complementary continuous evaluation target, enabling regression-based metrics that capture partial credit for predictions in the right affective neighborhood.
+The systematic nature of human disagreement and the internal consistency of VAD ratings further indicate that CEI measures something real about pragmatic competence rather than simply adding noise. Figure~\ref{fig:model-confusion} shows the model-level confusion matrix, aggregated across all 7 models in the zero-shot condition. Comparing this with the human confusion matrix (Figure~\ref{fig:confusion}) reveals overlapping but distinct error patterns. Models, like humans, frequently confuse anger and surprise. But models also over-predict anger and sadness at the expense of rarer emotions (disgust, anticipation), concentrating errors more narrowly than humans do. When uncertain, models appear to default to high-frequency negative emotions; human annotators spread their disagreements more evenly across the emotion wheel. The released per-scenario predictions and analysis scripts support further investigation.\footnote{Run \texttt{python scripts/run\_pipeline\_cei2026.py --stage all} to regenerate all baseline predictions and confusion matrices.} We additionally note that VAD prediction could serve as a complementary continuous evaluation target, enabling regression-based metrics that capture partial credit for predictions in the right affective neighborhood.
 
 \begin{figure}[t]
     \centering
@@ -606,7 +606,7 @@ Better pragmatic inference could help AI systems in mental health support (detec
 
 \subsection{Reproducibility}
 
-All code, data, and configuration files needed to reproduce the analyses in this paper are released under the MIT license at the project repository.\footnote{\url{https://github.com/jon-chun/cei-tom-dataset-base}} The complete local analysis pipeline (annotation statistics, agreement computation, and figure generation) can be reproduced by running \texttt{python scripts/run\_pipeline\_dmlr2026.py -{}-stage all\_local} ($\sim$30 seconds, no API calls required). LLM baseline results require API access but are fully specified by the prompt templates in Appendix~\ref{app:prompts} and the model configuration in \texttt{config/config-dmlr.yml}. All stochastic operations use seed=42 by default. A detailed reproducibility checklist is provided in Appendix~\ref{app:reproducibility}.
+All code, data, and configuration files needed to reproduce the analyses in this paper are released under the MIT license at the project repository.\footnote{\url{https://github.com/jon-chun/cei-tom-dataset-public}} The complete local analysis pipeline (annotation statistics, agreement computation, and figure generation) can be reproduced by running \texttt{python scripts/run\_pipeline\_cei2026.py -{}-stage all\_local} ($\sim$30 seconds, no API calls required). LLM baseline results require API access but are fully specified by the prompt templates in Appendix~\ref{app:prompts} and the model configuration in \texttt{config/config-cei.yml}. All stochastic operations use seed=42 by default. A detailed reproducibility checklist is provided in Appendix~\ref{app:reproducibility}.
 
 \subsection{Author Responsibility and Data License}
 
@@ -623,7 +623,7 @@ CEI follows semantic versioning (v1.0.0). The dataset is persistently archived o
 
 We presented CEI, a benchmark of 300 scenarios for evaluating how well language models interpret pragmatically complex utterances in social contexts. The dataset spans five pragmatic subtypes, three power relations, and four social settings, with three independent annotations per scenario. Inter-annotator agreement ($\kappa = 0.06$--$0.25$ by subtype) is low because the task is genuinely hard: reasonable annotators disagree on the emotional meaning of indirect speech, and this disagreement is itself informative. Current LLMs perform poorly (25\% best accuracy vs.\ 54\% human majority agreement), confirming that pragmatic reasoning remains a major gap in language model capabilities. The dissociation between human and model difficulty across subtypes---sarcasm is easiest for humans but hardest for models; deflection shows the reverse---suggests that model errors reflect qualitatively different processing failures rather than simply mirroring human uncertainty.
 
-Several directions for future work follow. The released per-annotator labels enable evaluation against the full distribution of human judgments, supporting soft-label training and calibration-aware metrics \citep{uma2021learning}. The VAD dimensional annotations provide a continuous evaluation target that could complement the categorical task. Multilingual extensions would test whether the pragmatic subtypes and difficulty patterns generalize across cultures. Probing experiments on intermediate model representations could reveal whether LLMs encode pragmatic features internally even when they fail to produce correct predictions. We release CEI under CC-BY-4.0 at \url{https://github.com/jon-chun/cei-tom-dataset-base}.
+Several directions for future work follow. The released per-annotator labels enable evaluation against the full distribution of human judgments, supporting soft-label training and calibration-aware metrics \citep{uma2021learning}. The VAD dimensional annotations provide a continuous evaluation target that could complement the categorical task. Multilingual extensions would test whether the pragmatic subtypes and difficulty patterns generalize across cultures. Probing experiments on intermediate model representations could reveal whether LLMs encode pragmatic features internally even when they fail to produce correct predictions. We release CEI under CC-BY-4.0 at \url{https://github.com/jon-chun/cei-tom-dataset-public}.
 
 %==============================================================================
 \impact{
@@ -638,7 +638,7 @@ We mitigate these risks through several mechanisms: open release under CC-BY-4.0
 We thank all co-authors for their contributions to scenario annotation and quality review. Hannah Sussman served as meta-annotator, conducting expert adjudication of all flagged scenarios. Murathan Kocaman, Kirill Sidorko, and Abhigya Koirala made substantial contributions to scenario design, annotation protocol refinement, and quality control beyond their annotation duties. This research received no external funding. The authors declare no competing interests.
 }
 
-\bibliography{dmlr2026_cei-tom_dataset}
+\bibliography{cei2026_cei-tom_dataset}
 
 \clearpage
 
@@ -660,7 +660,7 @@ Following \citet{gebru2021datasheets}, we provide a complete datasheet.
 \begin{itemize}[leftmargin=*,noitemsep]
     \item \textbf{Instances:} 300 scenarios with situational context and utterance
     \item \textbf{Labels:} 3 annotations per scenario (emotion + VAD)
-    \item \textbf{Splits:} Predefined stratified train/val/test (70/15/15) balanced by subtype and power relation, generated with seed=42. Available in \texttt{reports/dmlr2026/splits.json}
+    \item \textbf{Splits:} Predefined stratified train/val/test (70/15/15) balanced by subtype and power relation, generated with seed=42. Available in \texttt{reports/cei2026/splits.json}
     \item \textbf{Sensitive content:} None; all scenarios are synthetic
 \end{itemize}
 
@@ -694,7 +694,7 @@ Following \citet{gebru2021datasheets}, we provide a complete datasheet.
 \subsection{Distribution}
 \begin{itemize}[leftmargin=*,noitemsep]
     \item \textbf{License:} CC-BY-4.0 (data), MIT (code)
-    \item \textbf{Code:} \url{https://github.com/jon-chun/cei-tom-dataset-base}
+    \item \textbf{Code:} \url{https://github.com/jon-chun/cei-tom-dataset-public}
     \item \textbf{Dataset:} \url{https://huggingface.co/datasets/jonc/cei-benchmark}
     \item \textbf{Persistent archive:} Zenodo (DOI: \texttt{10.5281/zenodo.18528706})
     \item \textbf{Machine-readable metadata:} Croissant format (auto-generated by HuggingFace Hub)
@@ -814,8 +814,8 @@ Per the \citet{pineau2021improving} ML Reproducibility Checklist:
 \begin{small}
 \begin{verbatim}
 git clone https://github.com/jon-chun/
-    cei-tom-dataset-base.git
-cd cei-tom-dataset-base
+    cei-tom-dataset-public.git
+cd cei-tom-dataset-public
 uv venv && source .venv/bin/activate
 uv pip install -e ".[dev,llm]"
 \end{verbatim}
@@ -823,7 +823,7 @@ uv pip install -e ".[dev,llm]"
     \item \textbf{Local analysis} (no API keys, $\sim$30 seconds):
 \begin{small}
 \begin{verbatim}
-python scripts/run_pipeline_dmlr2026.py \
+python scripts/run_pipeline_cei2026.py \
     --stage all_local
 \end{verbatim}
 \end{small}
@@ -834,19 +834,19 @@ export OPENAI_API_KEY=... ANTHROPIC_API_KEY=...
 export XAI_API_KEY=... GOOGLE_API_KEY=...
 export TOGETHER_API_KEY=... FIREWORKS_API_KEY=...
 
-python scripts/run_pipeline_dmlr2026.py \
+python scripts/run_pipeline_cei2026.py \
     --stage run_baselines --prompt-mode zero-shot
-python scripts/run_pipeline_dmlr2026.py \
+python scripts/run_pipeline_cei2026.py \
     --stage run_baselines --prompt-mode cot
-python scripts/run_pipeline_dmlr2026.py \
+python scripts/run_pipeline_cei2026.py \
     --stage run_baselines --prompt-mode few-shot
 \end{verbatim}
 \end{small}
-    Use \texttt{--resume} to continue from the last completed model if interrupted. Model definitions and pricing are in \texttt{config/config-dmlr.yml}.
+    Use \texttt{--resume} to continue from the last completed model if interrupted. Model definitions and pricing are in \texttt{config/config-cei.yml}.
     \item \textbf{Generate outputs} (tables, figures, analysis):
 \begin{small}
 \begin{verbatim}
-python scripts/run_pipeline_dmlr2026.py \
+python scripts/run_pipeline_cei2026.py \
     --stage generate_outputs
 python scripts/generate_model_confusion_matrix.py
 \end{verbatim}
@@ -932,6 +932,6 @@ Each scenario in the released CSVs also includes per-annotator VAD ratings (vale
 \section{Compute Resources}
 \label{app:compute}
 
-All baseline experiments used commercial API endpoints with no local GPU computation. We ran the full 7-model baseline suite in three prompt modes (zero-shot, chain-of-thought, few-shot), totaling 6,300 API calls (7 models $\times$ 300 scenarios $\times$ 3 modes). Wall-clock time was approximately 2.5 hours using parallel execution with per-provider rate limiting. Total API cost was approximately \$15 USD at February 2026 pricing. No fine-tuning or training was performed. The analysis pipeline (\texttt{run\_pipeline\_dmlr2026.py}) runs all local stages in under 30 seconds on a standard laptop. Per-model pricing is listed in \texttt{config/config-dmlr.yml}.
+All baseline experiments used commercial API endpoints with no local GPU computation. We ran the full 7-model baseline suite in three prompt modes (zero-shot, chain-of-thought, few-shot), totaling 6,300 API calls (7 models $\times$ 300 scenarios $\times$ 3 modes). Wall-clock time was approximately 2.5 hours using parallel execution with per-provider rate limiting. Total API cost was approximately \$15 USD at February 2026 pricing. No fine-tuning or training was performed. The analysis pipeline (\texttt{run\_pipeline\_cei2026.py}) runs all local stages in under 30 seconds on a standard laptop. Per-model pricing is listed in \texttt{config/config-cei.yml}.
 
 \end{document}

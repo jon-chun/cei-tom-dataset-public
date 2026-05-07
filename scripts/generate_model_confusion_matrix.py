@@ -1,6 +1,6 @@
-"""Generate model-level confusion matrix figure for DMLR 2026 paper.
+"""Generate model-level confusion matrix figure for the CEI benchmark paper.
 
-Reads baseline_results.json (produced by run_pipeline_dmlr2026.py --stage run_baselines)
+Reads baseline_results.json (produced by run_pipeline_cei2026.py --stage run_baselines)
 and generates an 8x8 confusion matrix aggregated across all models, analogous to
 the human annotator confusion matrix (fig1_confusion_matrix.pdf).
 
@@ -8,7 +8,7 @@ Usage:
     python scripts/generate_model_confusion_matrix.py
 
 Outputs:
-    papers/dmlr2026/figures/fig8_model_confusion_matrix.pdf
+    papers/cei2026/figures/fig8_model_confusion_matrix.pdf
 """
 
 import json
@@ -21,8 +21,8 @@ import numpy as np
 
 EMOTIONS = ["joy", "trust", "fear", "surprise", "sadness", "disgust", "anger", "anticipation"]
 REPO_ROOT = Path(__file__).resolve().parent.parent
-RESULTS_PATH = REPO_ROOT / "reports" / "dmlr2026" / "baseline_results.json"
-OUTPUT_PATH = REPO_ROOT / "papers" / "dmlr2026" / "figures" / "fig8_model_confusion_matrix.pdf"
+RESULTS_PATH = REPO_ROOT / "reports" / "cei2026" / "baseline_results.json"
+OUTPUT_PATH = REPO_ROOT / "papers" / "cei2026" / "figures" / "fig8_model_confusion_matrix.pdf"
 
 
 def load_gold_labels() -> dict[str, str]:
@@ -101,7 +101,7 @@ def plot_confusion_matrix(matrix: np.ndarray, output_path: Path) -> None:
 def main() -> None:
     if not RESULTS_PATH.exists():
         print(f"ERROR: {RESULTS_PATH} not found.")
-        print("Run baselines first: python scripts/run_pipeline_dmlr2026.py --stage run_baselines")
+        print("Run baselines first: python scripts/run_pipeline_cei2026.py --stage run_baselines")
         sys.exit(1)
 
     with open(RESULTS_PATH) as f:

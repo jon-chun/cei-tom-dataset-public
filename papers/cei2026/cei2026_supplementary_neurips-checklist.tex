@@ -55,7 +55,7 @@
 
 \begin{enumerate}[leftmargin=*]
     \item \textbf{Does the paper include all information needed to reproduce the experiments?} \\
-    \yes. Prompt templates (Appendix C), model names and versions (Table 5), temperature settings (temperature 0), and configuration files (\texttt{config/config-dmlr.yml}) are provided.
+    \yes. Prompt templates (Appendix C), model names and versions (Table 5), temperature settings (temperature 0), and configuration files (\texttt{config/config-cei.yml}) are provided.
 
     \item \textbf{Does the paper report error bars or confidence intervals?} \\
     \yes. Bootstrap 95\% CIs (2,000 resamples, seed=42) for all Fleiss' $\kappa$ values (Table 3). ICC values for VAD dimensions (Table 4). 95\% CIs on emotion-valence consistency (Figure 9).
@@ -64,14 +64,14 @@
     \yes. Spearman rank correlations for linguistic features (\S4.4). Chi-squared power analysis for detectable effect size (\S6.2).
 
     \item \textbf{If applicable, does the paper use datasets that are publicly available?} \\
-    \yes. CEI is released under CC-BY-4.0 at \url{https://github.com/jon-chun/cei-tom-dataset-base} and archived on Zenodo (DOI: \texttt{10.5281/zenodo.18528706}).
+    \yes. CEI is released under CC-BY-4.0 at \url{https://github.com/jon-chun/cei-tom-dataset-public} and archived on Zenodo (DOI: \texttt{10.5281/zenodo.18528706}).
 \end{enumerate}
 
 \section{Code and Data}
 
 \begin{enumerate}[leftmargin=*]
     \item \textbf{Does the paper include code for reproducing the experiments?} \\
-    \yes. Full pipeline code released under MIT license. Reproducible via: \texttt{python scripts/run\_pipeline\_dmlr2026.py --stage all\_local}.
+    \yes. Full pipeline code released under MIT license. Reproducible via: \texttt{python scripts/run\_pipeline\_cei2026.py --stage all\_local}.
 
     \item \textbf{Does the paper include the dataset or a link to the dataset?} \\
     \yes. GitHub URL in abstract footnote and Appendix A. Zenodo DOI for persistent access.

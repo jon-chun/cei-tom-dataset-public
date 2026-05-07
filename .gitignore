@@ -11,8 +11,9 @@ __pycache__/
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+*.blg
 *.pdf
-!papers/dmlr2026/figures/*.pdf
+!papers/cei2026/figures/*.pdf
 
 # OS
 .DS_Store

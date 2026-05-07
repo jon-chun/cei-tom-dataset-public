@@ -5,17 +5,15 @@
 
 This repository contains all code, data, and reference outputs needed to replicate the analyses in the NeurIPS 2026 paper. It is self-contained and independent of the larger project repository.
 
-> Note: pipeline script names (`run_pipeline_dmlr2026.py`), config (`config-dmlr.yml`), and the `papers/dmlr2026/` and `reports/dmlr2026/` subdirectories retain a `dmlr2026` suffix from a prior submission target. They will be renamed to a venue-neutral `cei2026` slug in a follow-up commit; current filenames are kept intentionally so existing references and reports continue to resolve.
-
 ## Repository Contents
 
 ```
 data/human-gold/                   # The CEI dataset (300 scenarios, 5 CSVs)
-scripts/run_pipeline_dmlr2026.py   # Main pipeline (all stages)
+scripts/run_pipeline_cei2026.py   # Main pipeline (all stages)
 scripts/generate_model_confusion_matrix.py  # Model confusion matrix figure
-config/config-dmlr.yml             # Model definitions and pricing
-reports/dmlr2026/                   # Reference baseline outputs
-papers/dmlr2026/                    # Paper source, figures, bibliography
+config/config-cei.yml             # Model definitions and pricing
+reports/cei2026/                   # Reference baseline outputs
+papers/cei2026/                    # Paper source, figures, bibliography
 requirements.txt                    # Python dependencies
 LICENSE                             # MIT
 ```
@@ -34,7 +32,7 @@ Requires Python 3.10+. Only `pyyaml` is needed for the pipeline; `matplotlib` an
 ### 2. Run all local analysis (no API keys, ~30 seconds, $0 cost)
 
 ```bash
-python scripts/run_pipeline_dmlr2026.py --stage all_local
+python scripts/run_pipeline_cei2026.py --stage all_local
 ```
 
 This recomputes from the raw CSV data:
@@ -49,10 +47,10 @@ This recomputes from the raw CSV data:
 ### 3. Generate paper tables and figures
 
 ```bash
-python scripts/run_pipeline_dmlr2026.py --stage generate_outputs
+python scripts/run_pipeline_cei2026.py --stage generate_outputs
 ```
 
-Outputs LaTeX tables and figures to `reports/dmlr2026/`.
+Outputs LaTeX tables and figures to `reports/cei2026/`.
 
 ### 4. Generate model confusion matrix (requires matplotlib)
 
@@ -60,13 +58,13 @@ Outputs LaTeX tables and figures to `reports/dmlr2026/`.
 python scripts/generate_model_confusion_matrix.py
 ```
 
-Reads `reports/dmlr2026/baseline_results.json` and produces `papers/dmlr2026/figures/fig8_model_confusion_matrix.pdf`.
+Reads `reports/cei2026/baseline_results.json` and produces `papers/cei2026/figures/fig8_model_confusion_matrix.pdf`.
 
 ### 5. Run LLM baselines (requires API keys, ~$2.50 per prompt mode)
 
 ```bash
 # Dry run first (estimate costs, no API calls)
-python scripts/run_pipeline_dmlr2026.py --stage run_baselines --dry-run
+python scripts/run_pipeline_cei2026.py --stage run_baselines --dry-run
 
 # Set API keys for the providers you have access to
 export OPENAI_API_KEY="sk-..."
@@ -77,9 +75,9 @@ export TOGETHER_API_KEY="..."
 export FIREWORKS_API_KEY="..."
 
 # Run all three prompt modes
-python scripts/run_pipeline_dmlr2026.py --stage run_baselines --prompt-mode zero-shot
-python scripts/run_pipeline_dmlr2026.py --stage run_baselines --prompt-mode cot
-python scripts/run_pipeline_dmlr2026.py --stage run_baselines --prompt-mode few-shot
+python scripts/run_pipeline_cei2026.py --stage run_baselines --prompt-mode zero-shot
+python scripts/run_pipeline_cei2026.py --stage run_baselines --prompt-mode cot
+python scripts/run_pipeline_cei2026.py --stage run_baselines --prompt-mode few-shot
 ```
 
 The pipeline runs whichever models have keys configured and skips the rest. Use `--resume` to continue from checkpoint after interruption.
@@ -87,8 +85,8 @@ The pipeline runs whichever models have keys configured and skips the rest. Use 
 ### 6. Compile the paper (requires LaTeX)
 
 ```bash
-cd papers/dmlr2026
-latexmk -pdf dmlr2026_cei-tom_dataset.tex
+cd papers/cei2026
+latexmk -pdf cei2026_cei-tom_dataset.tex
 ```
 
 ## Baseline Models
@@ -127,7 +125,7 @@ Each CSV in `data/human-gold/` contains 60 scenarios with columns:
 - Temperature=0 (greedy decoding) for all model inference
 - VAD: 7-point text labels mapped to [-1.0, +1.0] at equal intervals
 - Baseline prompt targets the speaker's emotion (not the listener's response)
-- Reference outputs in `reports/dmlr2026/` can be compared against fresh runs
+- Reference outputs in `reports/cei2026/` can be compared against fresh runs
 
 ## License
 

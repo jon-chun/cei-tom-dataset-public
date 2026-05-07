@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
-"""DMLR 2026 Pipeline Runner — CEI-ToM Dataset Paper.
+"""CEI 2026 Pipeline Runner — CEI Benchmark Dataset Paper.
 
-Implements all computational tasks for the DMLR dataset paper (R0–R9):
+Implements all computational tasks for the CEI benchmark paper (R0–R9):
   Phase 0 (local):  Data verification, κ, power distribution, human performance,
                      VAD analysis, scale justification, stratified splits, examples
   Phase 1 (API):    CogSci-safe baseline inference (models loaded from
-                     config/config-dmlr.yml — none overlap with CogSci 2026)
+                     config/config-cei.yml — none overlap with CogSci 2026)
   Phase 2 (local):  Baseline analysis, LaTeX tables, figures
 
 Usage:
-    python scripts/run_pipeline_dmlr2026.py --stage all_local
-    python scripts/run_pipeline_dmlr2026.py --stage run_baselines --dry-run
-    python scripts/run_pipeline_dmlr2026.py --stage generate_outputs
-    python scripts/run_pipeline_dmlr2026.py --stage all
+    python scripts/run_pipeline_cei2026.py --stage all_local
+    python scripts/run_pipeline_cei2026.py --stage run_baselines --dry-run
+    python scripts/run_pipeline_cei2026.py --stage generate_outputs
+    python scripts/run_pipeline_cei2026.py --stage all
 """
 
 from __future__ import annotations
@@ -204,7 +204,7 @@ def _short_model_name(model_id: str) -> str:
 
 
 def load_dmlr_config(config_path: Path) -> dict[str, Any]:
-    """Load config-dmlr.yml and return parsed config."""
+    """Load config-cei.yml and return parsed config."""
     with open(config_path, encoding="utf-8") as f:
         return yaml.safe_load(f) or {}
 
@@ -294,7 +294,7 @@ class DualLogger:
     def __init__(self, log_path: Path) -> None:
         self.log_path = log_path
         log_path.parent.mkdir(parents=True, exist_ok=True)
-        self.logger = logging.getLogger("dmlr2026_pipeline")
+        self.logger = logging.getLogger("cei2026_pipeline")
         self.logger.setLevel(logging.INFO)
         self.logger.handlers.clear()
         fh = logging.FileHandler(log_path, mode="w")
@@ -1753,7 +1753,7 @@ def stage_generate_outputs(
         pass
 
     # Save all results as JSON master file
-    master_path = output_dir / "dmlr2026_all_results.json"
+    master_path = output_dir / "cei2026_all_results.json"
     with open(master_path, "w") as f:
         # Remove non-serializable items
         serializable = {}
@@ -1811,9 +1811,9 @@ Stages:
   generate_outputs    Generate LaTeX tables + figures
 
 Examples:
-  python scripts/run_pipeline_dmlr2026.py --stage all_local
-  python scripts/run_pipeline_dmlr2026.py --stage run_baselines --dry-run
-  python scripts/run_pipeline_dmlr2026.py --stage all --model gpt-5-mini --model llama-3.1-70b
+  python scripts/run_pipeline_cei2026.py --stage all_local
+  python scripts/run_pipeline_cei2026.py --stage run_baselines --dry-run
+  python scripts/run_pipeline_cei2026.py --stage all --model gpt-5-mini --model llama-3.1-70b
 """,
     )
     parser.add_argument(
@@ -1830,14 +1830,14 @@ Examples:
     parser.add_argument(
         "--output-dir",
         type=Path,
-        default=Path("reports/dmlr2026"),
-        help="Output directory (default: reports/dmlr2026)",
+        default=Path("reports/cei2026"),
+        help="Output directory (default: reports/cei2026)",
     )
     parser.add_argument(
         "--config",
         type=Path,
-        default=Path("config/config-dmlr.yml"),
-        help="Configuration file (default: config/config-dmlr.yml)",
+        default=Path("config/config-cei.yml"),
+        help="Configuration file (default: config/config-cei.yml)",
     )
     parser.add_argument(
         "--model",
@@ -1859,7 +1859,7 @@ Examples:
     # Setup
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     logs_dir = Path("logs")
-    log_path = logs_dir / f"log_dmlr2026_pipeline_{timestamp}.txt"
+    log_path = logs_dir / f"log_cei2026_pipeline_{timestamp}.txt"
     logger = DualLogger(log_path)
 
     # Load DMLR config

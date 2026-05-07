@@ -1,9 +1,11 @@
-# CEI Benchmark: Replication Package (DMLR 2026)
+# CEI Benchmark: Replication Package (NeurIPS 2026)
 
 **Paper:** CEI: A Benchmark for Evaluating Pragmatic Reasoning in Language Models
-**Venue:** Journal of Data-centric Machine Learning Research (DMLR)
+**Venue:** NeurIPS 2026 (Datasets & Benchmarks Track)
 
-This repository contains all code, data, and reference outputs needed to replicate the analyses in the DMLR 2026 paper. It is self-contained and independent of the larger project repository.
+This repository contains all code, data, and reference outputs needed to replicate the analyses in the NeurIPS 2026 paper. It is self-contained and independent of the larger project repository.
+
+> Note: pipeline script names (`run_pipeline_dmlr2026.py`), config (`config-dmlr.yml`), and the `papers/dmlr2026/` and `reports/dmlr2026/` subdirectories retain a `dmlr2026` suffix from a prior submission target. They will be renamed to a venue-neutral `cei2026` slug in a follow-up commit; current filenames are kept intentionally so existing references and reports continue to resolve.
 
 ## Repository Contents
 
